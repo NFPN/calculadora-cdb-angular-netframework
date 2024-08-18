@@ -2,7 +2,7 @@
 {
     public class CDBInputModel
     {
-        public int ValorInicial { get; set; }
+        public decimal ValorInicial { get; set; }
         public int Meses { get; set; }
     }
 }
