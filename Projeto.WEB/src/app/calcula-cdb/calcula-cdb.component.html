@@ -1,1 +1,39 @@
-<p>calcula-cdb works!</p>
+<div class="calcula-cdb-container">
+  <mat-card class="calcula-cdb-card">
+    <mat-card-title>Calculadora CDB</mat-card-title>
+    <mat-card-content>
+      <form>
+        <mat-form-field appearance="fill">
+          <mat-label>Valor Inicial</mat-label>
+          <span matPrefix class="calcula-cdb-currency">R$&nbsp;</span>
+          <input
+            matInput
+            [(ngModel)]="valorInicial"
+            (input)="onValorInicialChange($event)"
+            name="valorInicial"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Meses no investimento</mat-label>
+          <input
+            matInput
+            type="number"
+            placeholder="Meses"
+            [(ngModel)]="meses"
+            name="meses"
+            min="1"
+            max="60"
+            required
+          />
+          <mat-error *ngIf="meses && (meses < 1 || meses > 60)">
+            Os meses devem estar entre 1 e 60.
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="onCalculate()">
+          Calcular
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

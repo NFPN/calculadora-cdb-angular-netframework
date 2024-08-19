@@ -1,23 +1,39 @@
 $primary-color: #3f51b5;
 
-.login-container {
+.calcula-cdb-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #303030;
 
-  .login-card {
+  .calcula-cdb-card {
     width: 400px;
     padding: 20px;
     background-color: $primary-color;
     color: rgb(151, 148, 148);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    span {
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 1rem;
+      line-height: 0;
+      position: relative;
+      top: 8px;
+    }
 
     mat-form-field {
       width: 100%;
+      margin-bottom: 20px;
     }
 
     button {
       width: 100%;
+      display: block;
+      text-align: center;
     }
   }
 }
