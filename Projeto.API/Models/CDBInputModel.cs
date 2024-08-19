@@ -1,6 +1,6 @@
 ﻿namespace Projeto.API.Models
 {
-    public class CDBInputModel
+    public class CdbInputModel
     {
         public decimal ValorInicial { get; set; }
         public int Meses { get; set; }

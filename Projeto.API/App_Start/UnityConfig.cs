@@ -14,9 +14,7 @@ namespace Projeto.API
             // register all your components with the container here
             // it is NOT necessary to register your controllers
 
-            // e.g. container.RegisterType<ITestService, TestService>();
-
-            container.RegisterType<ICDBService, CDBService>();
+            container.RegisterType<ICdbService, CdbService>();
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }

@@ -5,18 +5,18 @@ using System.Web.Http;
 
 namespace Projeto.API.Controllers
 {
-    public class CDBController : ApiController
+    public class CdbController : ApiController
     {
-        private readonly ICDBService cdbService;
+        private readonly ICdbService cdbService;
 
-        public CDBController(ICDBService service)
+        public CdbController(ICdbService service)
         {
             cdbService = service;
         }
 
         [Route("api/CalculaCDB")]
         [HttpPost]
-        public IHttpActionResult CalculaCDB([FromBody] CDBInputModel input)
+        public IHttpActionResult CalculaCDB([FromBody] CdbInputModel input)
         {
             if (input == null || input.ValorInicial <= 0 || input.Meses < 1)
                 return BadRequest("Os parâmetros de entrada são inválidos.");

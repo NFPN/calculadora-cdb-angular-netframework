@@ -1,6 +1,6 @@
 ﻿namespace Projeto.API.Models
 {
-    public class CDBResultModel
+    public class CdbResultModel
     {
         public decimal ValorBruto { get; set; }
         public decimal ValorLiquido { get; set; }
