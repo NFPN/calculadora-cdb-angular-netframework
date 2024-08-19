@@ -24,9 +24,6 @@ export class CalculaCdbComponent {
       value.replace(/\./g, '').replace(',', '.')
     );
 
-    console.log(valorInicialNumber);
-    console.log(isNaN(valorInicialNumber) || valorInicialNumber < 1);
-
     return isNaN(valorInicialNumber) || valorInicialNumber < 1;
   }
 
@@ -42,7 +39,6 @@ export class CalculaCdbComponent {
 
     this.valorInicial = formattedValue;
     event.target.value = this.valorInicial;
-    console.log('changed');
   }
 
   onCalculate() {
