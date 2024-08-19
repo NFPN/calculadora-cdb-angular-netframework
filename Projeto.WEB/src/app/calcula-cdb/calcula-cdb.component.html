@@ -1,6 +1,7 @@
 <div class="calcula-cdb-container">
   <mat-card class="calcula-cdb-card">
     <mat-card-title>Calculadora CDB</mat-card-title>
+    <p></p>
     <mat-card-content>
       <form (ngSubmit)="onCalculate()">
         <mat-form-field appearance="fill">
@@ -43,7 +44,7 @@
         </button>
       </form>
     </mat-card-content>
-    <p>
+    <p style="padding-top: 25px">
       <mat-card-content>
         <div *ngIf="resultado !== null && !isLoading" class="resultado">
           <p>Valor Bruto: {{ resultado.valorBruto | currency : "BRL" }}</p>

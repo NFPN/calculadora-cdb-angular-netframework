@@ -12,7 +12,7 @@ interface CdbResultModel {
   providedIn: 'root',
 })
 export class CdbService {
-  private apiUrl = 'https://localhost:44302/api/CalculaCDB';
+  private apiUrl = 'https://localhost:9000/api/CalculaCDB';
 
   constructor(private http: HttpClient) {}
 
