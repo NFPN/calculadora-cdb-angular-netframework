@@ -1,5 +1,8 @@
 # Teste Sinacor - Cálculo de CDB
 
+![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
+![.Net](https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white)
+
 ## Visão Geral
 
 Este projeto é uma aplicação web para calcular o rendimento de Certificados de Depósito Bancário (CDB), composta por uma API desenvolvida em **ASP.NET Framework 4.8.1** e uma aplicação web front-end desenvolvida em **Angular**.
