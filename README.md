@@ -1,8 +1,8 @@
-# Teste Sinacor - C·lculo de CDB
+# Teste Sinacor - C√°lculo de CDB
 
-## Vis„o Geral
+## Vis√£o Geral
 
-Este projeto È uma aplicaÁ„o web para calcular o rendimento de Certificados de DepÛsito Banc·rio (CDB), composta por uma API desenvolvida em **ASP.NET Framework 4.8.1** e uma aplicaÁ„o web front-end desenvolvida em **Angular**.
+Este projeto √© uma aplica√ß√£o web para calcular o rendimento de Certificados de Dep√≥sito Banc√°rio (CDB), composta por uma API desenvolvida em **ASP.NET Framework 4.8.1** e uma aplica√ß√£o web front-end desenvolvida em **Angular**.
 
 ### Estrutura do Projeto
 
@@ -23,68 +23,68 @@ Este projeto È uma aplicaÁ„o web para calcular o rendimento de Certificados de D
 - Node.js v22.6.0 ou superior
 - Angular CLI 18.2.0 ou superior
 
-## ConfiguraÁ„o do Ambiente
+## Configura√ß√£o do Ambiente
 
 ### Passos para rodar a API (Backend)
 
-1. **Instalar DependÍncias**:
-   - Abra a soluÁ„o `Projeto.sln` no Visual Studio e restaure as dependÍncias (`NuGet`).
+1. **Instalar Depend√™ncias**:
+   - Abra a solu√ß√£o `Projeto.sln` no Visual Studio e restaure as depend√™ncias (`NuGet`).
 
 2. **Executar a API**:
-   - Defina o projeto `Projeto.Web` como `Startup project`
+   - Defina o projeto `Projeto.API` como `Startup project`
    - Clique em `Run` ou `F5` no Visual Studio para iniciar a API.
-   - Uma pagina com `API RUNNING` vai abrir indicando que est· funcionando corretamente
+   - Uma pagina com `API RUNNING` vai abrir indicando que est√° funcionando corretamente
 
 ### Passos para rodar o Frontend (Angular)
 
-1. **Instalar DependÍncias**:
-   - Navegue atÈ a pasta `Projeto.WEB` usando o terminal:
+1. **Instalar Depend√™ncias**:
+   - Navegue at√© a pasta `Projeto.WEB` usando o terminal:
      ```bash
      cd Projeto.WEB
      ```
-   - Instale as dependÍncias do projeto usando o npm:
+   - Instale as depend√™ncias do projeto usando o npm:
      ```bash
      npm install
      ```
 
 2. **Configurar a Base URL da API**:
-   - No arquivo `environment.ts` dentro de `src/app/environments/`, ajuste a `apiUrl` para apontar para o endereÁo onde a API est· rodando (ex: `https://localhost:44302/api/CalculaCDB`).
+   - No arquivo `environment.ts` dentro de `src/app/environments/`, ajuste a `apiUrl` para apontar para o endere√ßo onde a API est√° rodando (ex: `https://localhost:44302/api/CalculaCDB`).
 
 3. **Executar o Servidor de Desenvolvimento**:
-   - Inicie a aplicaÁ„o Angular com o comando:
+   - Inicie a aplica√ß√£o Angular com o comando:
      ```bash
      ng serve
      ```
-   - O front-end estar· disponÌvel em `http://localhost:4200`.
+   - O front-end estar√° dispon√≠vel em `http://localhost:4200`.
 
-### Passos para Build (ProduÁ„o)
+### Passos para Build (Produ√ß√£o)
 
-1. **Build da AplicaÁ„o Angular**:
-   - Execute o comando para gerar o build de produÁ„o:
+1. **Build da Aplica√ß√£o Angular**:
+   - Execute o comando para gerar o build de produ√ß√£o:
      ```bash
      ng build --prod
      ```
-   - O build ser· gerado na pasta `dist/`.
+   - O build ser√° gerado na pasta `dist/`.
 
 2. **Deploy**:
    - Os arquivos dentro da pasta `dist/` podem ser servidos via qualquer servidor web como IIS, Nginx ou Apache.
 
 ## Testes
 
-### Testes Unit·rios no Backend (ASP.NET)
+### Testes Unit√°rios no Backend (ASP.NET)
 
-1. **Executar Testes Unit·rios**:
+1. **Executar Testes Unit√°rios**:
    - Abra o projeto no Visual Studio.
-   - No menu, v· para **Test > Run All Tests** para executar todos os testes unit·rios e verificar a cobertura.
+   - No menu, v√° para **Test > Run All Tests** para executar todos os testes unit√°rios e verificar a cobertura.
 
 2. **Cobertura de Testes**:
-   - A cobertura de cÛdigo dos testes unit·rios est· acima de 90% para a camada de lÛgica de negÛcios (`CdbService`).
+   - A cobertura de c√≥digo dos testes unit√°rios est√° acima de 90% para a camada de l√≥gica de neg√≥cios (`CdbService`).
 
 ## Linting
 
 ### Linting no Backend
 
-- Utilize o **SonarLint** para verificar a conformidade com boas pr·ticas de cÛdigo. O cÛdigo foi testado e n„o contÈm alertas crÌticos de an·lise de cÛdigo.
+- Utilize o **SonarLint** para verificar a conformidade com boas pr√°ticas de c√≥digo. O c√≥digo foi testado e n√£o cont√©m alertas cr√≠ticos de an√°lise de c√≥digo.
 
 ### Linting no Frontend
 
