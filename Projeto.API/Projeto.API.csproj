@@ -147,12 +147,12 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CdbController.cs" />
-    <Compile Include="Models\CDBInputModel.cs" />
+    <Compile Include="Models\CdbInputModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CDBResultModel.cs" />
+    <Compile Include="Models\CdbResultModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\CdbService.cs" />
     <Compile Include="Service\ICdbService.cs" />
