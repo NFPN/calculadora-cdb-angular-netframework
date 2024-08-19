@@ -1,4 +1,5 @@
 ﻿using Projeto.API.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -30,6 +31,9 @@ namespace Projeto.API.Service
 
         public CDBResultModel CalcularCDB(decimal valorInicial, int meses)
         {
+            if (valorInicial <= 0 || meses < 1)
+                throw new InvalidOperationException($"Valores para calculo incorretos - ValorInicial: {valorInicial} - Meses: {meses}");
+
             var valorBruto = valorInicial;
             for (int i = 0; i < meses; i++)
             {

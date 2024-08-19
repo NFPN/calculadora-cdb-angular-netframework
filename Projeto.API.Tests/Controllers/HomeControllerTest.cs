@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Projeto.API;
 using Projeto.API.Controllers;
 using System.Web.Mvc;
 
@@ -19,7 +18,7 @@ namespace Projeto.API.Tests.Controllers
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.AreEqual("Home Page", result.ViewBag.Title);
+            Assert.AreEqual("API RUNNING", result.ViewBag.Message);
         }
     }
 }

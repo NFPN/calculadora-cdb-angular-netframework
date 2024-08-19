@@ -19,9 +19,7 @@ namespace Projeto.API.Controllers
         public IHttpActionResult CalculaCDB([FromBody] CDBInputModel input)
         {
             if (input == null || input.ValorInicial <= 0 || input.Meses < 1)
-            {
                 return BadRequest("Os parâmetros de entrada são inválidos.");
-            }
 
             try
             {

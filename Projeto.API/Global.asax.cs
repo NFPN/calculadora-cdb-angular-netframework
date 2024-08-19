@@ -14,8 +14,6 @@ namespace Projeto.API
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            //.net framework não possui Injeção de dependencia automatica, o pacote Unity.WebAPI será utilizado
             UnityConfig.RegisterComponents();
         }
     }
