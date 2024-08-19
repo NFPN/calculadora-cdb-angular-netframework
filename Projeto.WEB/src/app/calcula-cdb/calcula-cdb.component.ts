@@ -1,23 +1,40 @@
 import { Component } from '@angular/core';
-import { LOCALE_ID } from '@angular/core';
-import { registerLocaleData } from '@angular/common';
-import localePt from '@angular/common/locales/pt';
-
-registerLocaleData(localePt);
+import { CdbService } from '../service/CdbService';
 
 @Component({
   selector: 'app-calcula-cdb',
   templateUrl: './calcula-cdb.component.html',
   styleUrls: ['./calcula-cdb.component.scss'],
-  providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
+  providers: [],
 })
 export class CalculaCdbComponent {
-  valorInicial: number | any = null;
-  meses: number | null = null;
+  valorInicial: string = '';
+  meses: number = 1;
+  isLoading: boolean = false;
+  resultado: {
+    valorBruto: number;
+    valorLiquido: number;
+    imposto: number;
+  } | null = null;
+
+  constructor(private cdbService: CdbService) {}
+
+  validateValorInicial(value: string): boolean {
+    const valorInicialNumber = parseFloat(
+      value.replace(/\./g, '').replace(',', '.')
+    );
+
+    console.log(valorInicialNumber);
+    console.log(isNaN(valorInicialNumber) || valorInicialNumber < 1);
+
+    return isNaN(valorInicialNumber) || valorInicialNumber < 1;
+  }
 
   onValorInicialChange(event: any) {
     const sanitized = event.target.value.replace(/\D/g, '');
-    const numericValue = parseInt(sanitized, 10);
+    let numericValue = parseInt(sanitized, 10);
+
+    if (isNaN(numericValue)) numericValue = 0;
 
     let formattedValue = (numericValue / 100).toFixed(2);
     formattedValue = formattedValue.replace('.', ',');
@@ -25,19 +42,36 @@ export class CalculaCdbComponent {
 
     this.valorInicial = formattedValue;
     event.target.value = this.valorInicial;
-    console.log(this.valorInicial);
+    console.log('changed');
   }
 
   onCalculate() {
-    if (this.meses === null || this.meses < 1 || this.meses > 60) {
-      alert('Os meses devem estar entre 1 e 60.');
-      return;
-    }
+    const valorInicialNumber = parseFloat(
+      this.valorInicial.replace(/\./g, '').replace(',', '.')
+    );
 
-    if (this.valorInicial !== null && this.meses !== null) {
-      console.log('Calculando com:', this.valorInicial, this.meses);
-    } else {
-      console.error('Preencha os campos corretamente');
-    }
+    if (isNaN(valorInicialNumber) || valorInicialNumber < 1)
+      alert('Coloque um valor inicial');
+
+    if (!this.meses || (this.meses && (this.meses < 1 || this.meses > 60)))
+      alert('Coloque um valor de meses válido');
+
+    this.isLoading = true;
+
+    this.cdbService.calculaCDB(valorInicialNumber, this.meses).subscribe({
+      next: (response) => {
+        this.resultado = {
+          valorBruto: response.ValorBruto,
+          valorLiquido: response.ValorLiquido,
+          imposto: response.Imposto,
+        };
+
+        this.isLoading = false;
+      },
+      error: (error) => {
+        console.error('Erro ao calcular o CDB', error);
+        this.isLoading = false;
+      },
+    });
   }
 }

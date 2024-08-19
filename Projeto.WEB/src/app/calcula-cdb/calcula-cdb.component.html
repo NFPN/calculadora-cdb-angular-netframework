@@ -2,7 +2,7 @@
   <mat-card class="calcula-cdb-card">
     <mat-card-title>Calculadora CDB</mat-card-title>
     <mat-card-content>
-      <form>
+      <form (ngSubmit)="onCalculate()">
         <mat-form-field appearance="fill">
           <mat-label>Valor Inicial</mat-label>
           <span matPrefix class="calcula-cdb-currency">R$&nbsp;</span>
@@ -13,6 +13,9 @@
             name="valorInicial"
             required
           />
+          <mat-error *ngIf="valorInicial && validateValorInicial(valorInicial)">
+            Coloque um valor válido
+          </mat-error>
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Meses no investimento</mat-label>
@@ -30,10 +33,24 @@
             Os meses devem estar entre 1 e 60.
           </mat-error>
         </mat-form-field>
-        <button mat-raised-button color="primary" (click)="onCalculate()">
-          Calcular
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="isLoading"
+        >
+          {{ isLoading ? "Calculando..." : "Calcular" }}
         </button>
       </form>
     </mat-card-content>
-  </mat-card>
+    <p>
+      <mat-card-content>
+        <div *ngIf="resultado !== null && !isLoading" class="resultado">
+          <p>Valor Bruto: {{ resultado.valorBruto | currency : "BRL" }}</p>
+          <p>Valor Líquido: {{ resultado.valorLiquido | currency : "BRL" }}</p>
+          <p>Imposto: {{ resultado.imposto }}%</p>
+        </div>
+      </mat-card-content>
+    </p></mat-card
+  >
 </div>

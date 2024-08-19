@@ -16,7 +16,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 import { provideHttpClient } from '@angular/common/http'; // Usando o novo provedor
 import { enableProdMode } from '@angular/core';
-import { environment } from '../environments/environments';
+import { environment } from './environments/environment';
 
 if (environment.production) {
   enableProdMode();

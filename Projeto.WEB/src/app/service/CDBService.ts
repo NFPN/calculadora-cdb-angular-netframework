@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class CDBService {
-  private apiUrl = 'https://api.exemplo.com/calculate-cdb';
+export class CdbService {
+  private apiUrl = 'https://localhost:44302/api/CalculaCDB';
 
   constructor(private http: HttpClient) {}
 
