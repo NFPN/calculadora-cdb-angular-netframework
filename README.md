@@ -80,6 +80,16 @@ Este projeto é uma aplicação web para calcular o rendimento de Certificados d
 2. **Cobertura de Testes**:
    - A cobertura de código dos testes unitários está acima de 90% para a camada de lógica de negócios (`CdbService`).
 
+### Testes Unitários no Frontend (Angular)
+
+1. **Executar Testes Unitários**:
+   - Navegue até a pasta `web-front` e execute o seguinte comando:
+     ```bash
+     ng test
+     ```
+   - Isso iniciará o **Karma** para executar os testes unitários escritos com **Jasmine**.
+
+
 ## Linting
 
 ### Linting no Backend
