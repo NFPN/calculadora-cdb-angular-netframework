@@ -31,8 +31,9 @@ Este projeto é uma aplicação web para calcular o rendimento de Certificados de D
    - Abra a solução `Projeto.sln` no Visual Studio e restaure as dependências (`NuGet`).
 
 2. **Executar a API**:
-   - Defina o projeto Projeto.SelfHost como `Startup project`
+   - Defina o projeto `Projeto.Web` como `Startup project`
    - Clique em `Run` ou `F5` no Visual Studio para iniciar a API.
+   - Uma pagina com `API RUNNING` vai abrir indicando que está funcionando corretamente
 
 ### Passos para rodar o Frontend (Angular)
 
@@ -47,7 +48,7 @@ Este projeto é uma aplicação web para calcular o rendimento de Certificados de D
      ```
 
 2. **Configurar a Base URL da API**:
-   - No arquivo `environment.ts` dentro de `src/app/environments/`, ajuste a `baseUrl` para apontar para o endereço onde a API está rodando (ex: `http://localhost:9000/api/CalculaCDB`).
+   - No arquivo `environment.ts` dentro de `src/app/environments/`, ajuste a `apiUrl` para apontar para o endereço onde a API está rodando (ex: `https://localhost:44302/api/CalculaCDB`).
 
 3. **Executar o Servidor de Desenvolvimento**:
    - Inicie a aplicação Angular com o comando:
@@ -78,18 +79,6 @@ Este projeto é uma aplicação web para calcular o rendimento de Certificados de D
 
 2. **Cobertura de Testes**:
    - A cobertura de código dos testes unitários está acima de 90% para a camada de lógica de negócios (`CdbService`).
-
-### Testes Unitários no Frontend (Angular)
-
-1. **Executar Testes Unitários**:
-   - Navegue até a pasta `Projeto.WEB` e execute o seguinte comando:
-     ```bash
-     ng test
-     ```
-   - Isso iniciará o **Karma** para executar os testes unitários escritos com **Jasmine**.
-
-2. **Relatório de Cobertura**:
-   - Após a execução dos testes, um relatório de cobertura será gerado na pasta `coverage/`.
 
 ## Linting
 
