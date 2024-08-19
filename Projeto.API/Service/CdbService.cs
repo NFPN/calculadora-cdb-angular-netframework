@@ -47,7 +47,7 @@ namespace Projeto.API.Service
             {
                 ValorBruto = valorBruto,
                 ValorLiquido = valorLiquido,
-                Imposto = taxaImposto
+                Imposto = taxaImposto * 100
             };
 
             decimal CalcularImposto()

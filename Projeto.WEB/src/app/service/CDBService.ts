@@ -12,7 +12,7 @@ interface CdbResultModel {
   providedIn: 'root',
 })
 export class CdbService {
-  private apiUrl = 'https://localhost:44302/api/test';
+  private apiUrl = 'https://localhost:44302/api/CalculaCDB';
 
   constructor(private http: HttpClient) {}
 
@@ -21,6 +21,6 @@ export class CdbService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
     });
-    return this.http.post<CdbResultModel>(this.apiUrl, payload);
+    return this.http.post<CdbResultModel>(this.apiUrl, payload, { headers });
   }
 }

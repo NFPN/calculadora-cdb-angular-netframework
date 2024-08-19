@@ -31,14 +31,5 @@ namespace Projeto.API.Controllers
                 return InternalServerError(ex);
             }
         }
-
-        [Route("api/test")]
-        [HttpPost]
-        public IHttpActionResult Test([FromBody] object input)
-        {
-            var test = input;
-
-            return Ok(test);
-        }
     }
 }
