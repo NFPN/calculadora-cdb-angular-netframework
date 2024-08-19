@@ -91,3 +91,10 @@ Este projeto é uma aplicação web para calcular o rendimento de Certificados d
 - Utilize o comando abaixo para verificar erros de lint no projeto Angular:
   ```bash
   ng lint
+
+## Resolvendo problemas
+1. `roslyn\csc.exe`
+   - Atualize o pacte `Microsoft.CodeDom.Providers.DotNetCompilerPlatform`
+   - Clique no projeto `Projeto.API` e no menu clique em **Rebuild**
+   - Tente rodar o projeto novamente.
+   - Caso persistir feche o Visual Studio remova a pasta `.vs` e tente novamente.
