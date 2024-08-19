@@ -7,6 +7,8 @@
 
 Este projeto é uma aplicação web para calcular o rendimento de Certificados de Depósito Bancário (CDB), composta por uma API desenvolvida em **ASP.NET Framework 4.8.1** e uma aplicação web front-end desenvolvida em **Angular**.
 
+![chrome_4YPnnjH09z](https://github.com/user-attachments/assets/6b9d252d-d511-48b7-a58e-080ef8b67500)
+
 ### Estrutura do Projeto
 
 - teste-sinacor-gft
